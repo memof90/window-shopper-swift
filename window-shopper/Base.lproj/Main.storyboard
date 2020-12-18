@@ -26,30 +26,59 @@
                                     <constraint firstAttribute="height" constant="60" id="TUk-Q1-AZG"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-Ic-lcN" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="20" y="268" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-Ic-lcN" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="268" width="374" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="BYB-dK-G5A"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="683-Kx-acY" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="364" width="374" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="WgZ-8c-mcr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K1Z-Ic-lcN" secondAttribute="trailing" constant="20" id="9IU-iO-Fr1"/>
+                            <constraint firstItem="683-Kx-acY" firstAttribute="leading" secondItem="K1Z-Ic-lcN" secondAttribute="leading" id="Gpb-U6-4UL"/>
+                            <constraint firstItem="K1Z-Ic-lcN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IiI-8S-Qf3"/>
                             <constraint firstItem="gLg-Q1-Tkb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kl7-UJ-WZw"/>
+                            <constraint firstItem="683-Kx-acY" firstAttribute="top" secondItem="K1Z-Ic-lcN" secondAttribute="bottom" constant="40" id="OPq-2y-Jxs"/>
                             <constraint firstItem="AfZ-PZ-nyU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QgI-Xy-QiL"/>
                             <constraint firstItem="AfZ-PZ-nyU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WbS-8H-rKh"/>
                             <constraint firstItem="AfZ-PZ-nyU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="agY-zs-3kh"/>
+                            <constraint firstItem="683-Kx-acY" firstAttribute="trailing" secondItem="K1Z-Ic-lcN" secondAttribute="trailing" id="bJ3-bc-NwE"/>
                             <constraint firstItem="AfZ-PZ-nyU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dJU-PZ-QFZ"/>
+                            <constraint firstItem="683-Kx-acY" firstAttribute="height" secondItem="K1Z-Ic-lcN" secondAttribute="height" id="fFv-AO-6Ag"/>
                             <constraint firstItem="gLg-Q1-Tkb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="lBb-oh-mLo"/>
+                            <constraint firstItem="K1Z-Ic-lcN" firstAttribute="top" secondItem="gLg-Q1-Tkb" secondAttribute="bottom" constant="99" id="zTX-T2-1hV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priceTXT" destination="683-Kx-acY" id="cIA-8b-22q"/>
+                        <outlet property="wageTxt" destination="K1Z-Ic-lcN" id="8Dn-WL-pif"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="62.946428571428569"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="683-Kx-acY">
+            <size key="intrinsicContentSize" width="65" height="18.5"/>
+        </designable>
+        <designable name="K1Z-Ic-lcN">
+            <size key="intrinsicContentSize" width="111.5" height="18.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="windowShopperBG" width="414" height="736"/>
         <image name="windowShopperIcon" width="115" height="115"/>
