@@ -14,6 +14,11 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var priceTXT: CurrencyTxtField!
     
+    @IBOutlet weak var resultLbl: UILabel!
+    
+    @IBOutlet weak var hoursLbl: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,12 +30,31 @@ class MainVC: UIViewController {
         
         wageTxt.inputAccessoryView  = calcBtn
         priceTXT.inputAccessoryView = calcBtn
+        
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
     }
     
 //    MARK: FUNCTIONS
   @objc  func calculate(){
-        print("we got here")
+//    campos no vacios fields not empty
+    if let wageTxt = wageTxt.text, let priceTxt = priceTXT.text {
+//        this number convert to double or change to number using casting
+        if let wage = Double(wageTxt), let price = Double(priceTxt){
+            view.endEditing(true)
+            resultLbl.isHidden = false
+            hoursLbl.isHidden = false
+            resultLbl.text = "\(Wage.getHours(forWage: wage, andPrice: price))"
+        }
+    }
     }
     //    MARK: IBAction
+    
+    @IBAction func clearCalculatorPressed(_ sender: Any) {
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
+        wageTxt.text = ""
+        priceTXT.text = ""
+    }
 }
 
