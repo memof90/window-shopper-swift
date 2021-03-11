@@ -1,5 +1,5 @@
 # window-shopper-swift
-this is an app to calculate when hours and price need to work
+this is an app to calculate when hours and price need to work Calculated
 
 APP CALCULATED PRICE 
 
